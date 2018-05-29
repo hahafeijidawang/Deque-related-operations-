@@ -1,0 +1,76 @@
+#include <iostream>
+
+#include<string>
+
+#include<algorithm>
+
+#include"deque"
+
+using namespace std;
+
+void printD(deque<int>&d){
+
+
+    for(deque<int>::iterator it = d.begin();it!= d.end();it++){
+
+
+                cout<<*it<<" ";
+    }
+
+    cout<<endl;
+}
+
+void main41(){
+
+    deque<int> d1;
+
+    d1.push_back(1);
+
+    d1.push_back(2);
+
+    d1.push_back(5);
+
+    d1.push_front(-12);
+
+    d1.push_front(-11);
+
+    d1.push_front(-55);
+
+    cout<<"头部元素： "<<d1.front()<<endl;
+
+    cout<<"尾部元素： "<<d1.back()<<endl;
+
+    printD(d1);
+
+    d1.pop_front();//删除头部元素
+
+
+    d1.pop_back();//删除尾部元素。
+
+
+    printD(d1);
+
+    //查找-33在数组下标的值。
+
+
+    deque<int>::iterator it = find(d1.begin(),d1.end(),-12);
+
+    if(it!=d1.end()){
+
+        cout<<"-33 数组下标是："<<distance(d1.begin(),it)<<endl;
+
+    }else {
+
+       cout<<"没有找到值"<<endl;
+    }
+
+}
+int main()
+{
+
+
+    main41();
+
+    return 0;
+}
+
